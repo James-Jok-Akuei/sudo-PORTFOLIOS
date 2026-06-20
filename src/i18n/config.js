@@ -3,10 +3,10 @@
 export const config = {
   name: ".sudo PORTFOLIOS",
   wordmark: ".sudo",
-  whatsapp: "{{WHATSAPP_NUMBER}}",
+  whatsapp: "250798972441",
   calUsername: "jokditakeerleek-tag3rd",
   calEvent: "free-consult",
-  web3formsKey: "{{WEB3FORMS_KEY}}",
+  web3formsKey: "ba4cb007-e897-4f40-8985-ea693531906d",
   email: "hello@sudoportfolios.com",
   socials: {
     facebook: "https://facebook.com/{{FACEBOOK_HANDLE}}",

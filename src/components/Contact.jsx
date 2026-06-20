@@ -74,6 +74,18 @@ export default function Contact() {
             {contact.formTitle}
           </p>
 
+          {/* Web3Forms honeypot: hidden from humans, bots tick it and get
+              rejected. Kept out of the tab order and the accessibility tree. */}
+          <input
+            type="checkbox"
+            name="botcheck"
+            className="hidden"
+            style={{ display: "none" }}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
           {contact.fields.map((field) => (
             <div key={field.name} className="flex flex-col gap-1.5">
               <label

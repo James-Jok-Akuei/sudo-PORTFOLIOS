@@ -5,7 +5,8 @@ const en = {
   brand: {
     ...config,
     tagline: "Permission to present yourself at the highest level.",
-    whatsappMessage: "Hi .sudo, I'd like a portfolio.",
+    whatsappMessage:
+      "Hi James, I found .sudo PORTFOLIOS and I'd like to talk about building my portfolio.",
   },
 
   nav: {
@@ -151,6 +152,7 @@ const en = {
     comingSoonBody:
       "The live booking calendar is being connected. In the meantime, start your free consultation here.",
     cta: "Book a free consult",
+    reset: "Book another time",
   },
 
   contact: {
