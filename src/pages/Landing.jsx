@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import Nav from "../components/Nav.jsx";
 import Hero from "../components/Hero.jsx";
@@ -59,6 +59,19 @@ export default function Landing() {
   const content = useContent();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
   const active = useActiveHash();
+
+  // On mobile/tablet, scroll to the hashed section once it has rendered. The
+  // browser's native anchor jump fires before React mounts the section, so it
+  // otherwise lands at the top. (Desktop handles the hash via paged routing.)
+  useEffect(() => {
+    if (isDesktop) return;
+    const id = window.location.hash.slice(1);
+    if (!id || id === "top") return;
+    const t = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ block: "start" });
+    }, 200);
+    return () => clearTimeout(t);
+  }, [isDesktop]);
 
   // Mobile / tablet: classic single continuous scroll.
   if (!isDesktop) {
