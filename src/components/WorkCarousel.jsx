@@ -73,6 +73,7 @@ export default function WorkCarousel({ work }) {
 
       <ul
         ref={rail}
+        aria-label={work.heading}
         className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2"
       >
         {items.map((w) => {

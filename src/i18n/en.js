@@ -194,6 +194,8 @@ const en = {
     note: "Sample work shown is for demonstration. Your project is built from scratch.",
   },
 
+  skipToContent: "Skip to content",
+
   workSample: {
     back: "Back to home",
     comingSoon: "Full case page coming in the next build step.",

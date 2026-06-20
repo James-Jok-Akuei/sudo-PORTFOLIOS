@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useContent } from "../i18n/LanguageContext.jsx";
+import { useTheme } from "../lib/useTheme.js";
 import { calUrl, isPlaceholder } from "../lib/links.js";
 import { fadeRise } from "../lib/motion.js";
 import Section from "./ui/Section.jsx";
@@ -10,6 +11,7 @@ import CommandButton from "./ui/CommandButton.jsx";
 
 export default function Booking() {
   const { brand, booking } = useContent();
+  const { theme } = useTheme();
   const ready = !isPlaceholder(brand.calUsername);
   // Bumping this key remounts the embed back to the fresh calendar, so a
   // visitor who lands on Cal's confirmation/cancel screen can start over.
@@ -20,15 +22,16 @@ export default function Booking() {
     (async () => {
       const cal = await getCalApi();
       cal("ui", {
-        theme: "dark",
+        theme, // follows the site's light/dark theme
         hideEventTypeDetails: false,
         layout: "month_view",
         cssVarsPerTheme: {
-          dark: { "cal-brand": "#078930" },
+          light: { "cal-brand": "#DA121A" }, // flag red in light mode
+          dark: { "cal-brand": "#078930" }, // flag green in dark mode
         },
       });
     })();
-  }, [ready]);
+  }, [ready, theme]);
 
   return (
     <Section id="booking">
@@ -53,11 +56,11 @@ export default function Booking() {
             </button>
           </div>
           <Cal
-            key={embedKey}
+            key={`${embedKey}-${theme}`}
             namespace={brand.calEvent}
             calLink={`${brand.calUsername}/${brand.calEvent}`}
             style={{ width: "100%", height: "100%", minHeight: "640px" }}
-            config={{ theme: "dark", layout: "month_view" }}
+            config={{ theme, layout: "month_view" }}
           />
         </motion.div>
       ) : (
