@@ -9,10 +9,10 @@ export const config = {
   web3formsKey: "ba4cb007-e897-4f40-8985-ea693531906d",
   email: "hello@sudoportfolios.com",
   socials: {
-    facebook: "https://facebook.com/{{FACEBOOK_HANDLE}}",
-    instagram: "https://instagram.com/{{INSTAGRAM_HANDLE}}",
-    tiktok: "https://tiktok.com/@{{TIKTOK_HANDLE}}",
-    linkedin: "https://linkedin.com/in/{{LINKEDIN_HANDLE}}",
+    facebook: "https://www.facebook.com/profile.php?id=61590890289411",
+    instagram: "https://www.instagram.com/sudoportfolios",
+    tiktok: "", // pending — empty hides the icon for now
+    linkedin: "", // pending — empty hides the icon for now
   },
 };
 
