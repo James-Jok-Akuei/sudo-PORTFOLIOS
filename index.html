@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0A0C10" />
+    <meta name="theme-color" content="#F3F5F8" />
     <title>.sudo PORTFOLIOS — Portfolios that get you taken seriously.</title>
     <meta
       name="description"
@@ -43,19 +43,19 @@
     />
     <meta name="twitter:image" content="https://sudo-portfolios.com/og.png" />
 
-    <!-- Apply the saved theme before paint to avoid a flash. Dark-first default. -->
+    <!-- Apply the saved theme before paint to avoid a flash. Light-first default. -->
     <script>
       (function () {
         var root = document.documentElement;
         try {
-          var t = localStorage.getItem("theme") || "dark";
+          var t = localStorage.getItem("theme") || "light";
           root.classList.toggle("dark", t === "dark");
           root.classList.toggle("light", t === "light");
           var lang = localStorage.getItem("lang") === "ar" ? "ar" : "en";
           root.lang = lang;
           root.dir = lang === "ar" ? "rtl" : "ltr";
         } catch (e) {
-          root.classList.add("dark");
+          root.classList.add("light");
         }
       })();
     </script>
